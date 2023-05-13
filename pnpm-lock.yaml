@@ -54,12 +54,12 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^17.6.3
     version: 17.6.3
-  '@commitlint/cz-commitlint':
-    specifier: ^17.5.0
-    version: 17.5.0(commitizen@4.3.0)(inquirer@8.2.5)
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0
+  cz-git:
+    specifier: ^1.6.1
+    version: 1.6.1
   eslint-config-prettier:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.40.0)
@@ -143,26 +143,6 @@ packages:
     dependencies:
       '@commitlint/types': 17.4.4
       ajv: 8.12.0
-    dev: true
-
-  /@commitlint/cz-commitlint@17.5.0(commitizen@4.3.0)(inquirer@8.2.5):
-    resolution: {integrity: sha512-zW68IvFPuejgbwvWG5SZFkf6g/cniiCsvcphp1WCoA9fn65nnl6kE3VvwbyNRTFpO1Pczpa4OTsaWigQ1jdk7A==}
-    engines: {node: '>=v14'}
-    peerDependencies:
-      commitizen: ^4.0.3
-      inquirer: ^8.0.0
-    dependencies:
-      '@commitlint/ensure': 17.4.4
-      '@commitlint/load': 17.5.0
-      '@commitlint/types': 17.4.4
-      chalk: 4.1.2
-      commitizen: 4.3.0
-      inquirer: 8.2.5
-      lodash.isplainobject: 4.0.6
-      word-wrap: 1.2.3
-    transitivePeerDependencies:
-      - '@swc/core'
-      - '@swc/wasm'
     dev: true
 
   /@commitlint/ensure@17.4.4:
@@ -2101,6 +2081,10 @@ packages:
     transitivePeerDependencies:
       - '@swc/core'
       - '@swc/wasm'
+    dev: true
+
+  /cz-git@1.6.1:
+    resolution: {integrity: sha512-+ohk/MFETERw4o/WpN3hUk7GM8oAwnaQI/uDuREGm4/B+G3DghGvNZQ/0MbFqZHWgKWvMzNZI6eKmPo0uPCu1A==}
     dev: true
 
   /damerau-levenshtein@1.0.8:
