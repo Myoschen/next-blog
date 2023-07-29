@@ -1,4 +1,7 @@
 import '@/constants/globals.css';
+import '@/constants/prism-plus.css';
+import 'prism-theme-vars/base.css';
+import 'prism-theme-vars/themes/vitesse-dark.css';
 
 import {Inter} from 'next/font/google';
 
