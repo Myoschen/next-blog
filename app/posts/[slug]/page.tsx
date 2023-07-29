@@ -1,5 +1,6 @@
-import {allPosts} from 'contentlayer/generated';
 import {format, parseISO} from 'date-fns';
+
+import {allPosts} from '@/content';
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({slug: post.slug}));
