@@ -13,19 +13,19 @@ export const Post = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    slug: {
-      type: 'string',
-      required: true,
-    },
     date: {
       type: 'date',
       required: true,
     },
   },
   computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (post) => post._raw.flattenedPath,
+    },
     url: {
       type: 'string',
-      resolve: (post) => `/posts/${post.slug}`,
+      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
     },
   },
 }));

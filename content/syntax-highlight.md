@@ -1,9 +1,7 @@
 ---
 title: Syntax Highlight
-description: This is a demo of Syntax Highlight
-slug: syntax-highlight
+description: This is a demo of Syntax Highlight.
 date: 2023-07-29
-type: Post
 ---
 
 ## H2 title
