@@ -7,4 +7,9 @@ module.exports = {
     'plugin:tailwindcss/recommended',
   ],
   plugins: ['prettier', 'tailwindcss'],
+  settings: {
+    tailwindcss: {
+      callees: ['cn'],
+    },
+  },
 };
