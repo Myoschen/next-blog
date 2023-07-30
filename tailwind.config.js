@@ -7,5 +7,5 @@ module.exports = {
       mono: 'var(--mono)',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
