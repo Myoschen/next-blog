@@ -2,7 +2,7 @@ import Link from 'next/link';
 import {compareDesc, format, parseISO} from 'date-fns';
 
 import config from '@/constants/site-config';
-import {allPosts, Post} from '@/content';
+import {allPosts, Post} from '@/content/generated';
 
 function PostCard(post: Post) {
   return (

@@ -15,7 +15,7 @@ module.exports = {
     '^@/hooks/(.*)$',
     '^@/store/(.*)$',
     '^@/components/(.*)$',
-    '^@/content',
+    '^@/content/generated',
     '',
     '^[./]',
   ],

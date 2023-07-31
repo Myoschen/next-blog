@@ -1,6 +1,6 @@
 import {format, parseISO} from 'date-fns';
 
-import {allPosts} from '@/content';
+import {allPosts} from '@/content/generated';
 
 export const generateStaticParams = async () =>
   allPosts.map((post) => ({slug: post.slug}));
@@ -24,7 +24,7 @@ const PostLayout = ({params}: {params: {slug: string}}) => {
         <h1 className="text-3xl font-semibold">{post.title}</h1>
       </div>
       <article
-        className="prose max-w-screen-md"
+        className="prose max-w-none"
         dangerouslySetInnerHTML={{__html: post.body.html}}
       />
     </div>

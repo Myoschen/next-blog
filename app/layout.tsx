@@ -1,7 +1,4 @@
 import '@/constants/globals.css';
-import '@/constants/prism-plus.css';
-import 'prism-theme-vars/base.css';
-import 'prism-theme-vars/themes/vitesse-dark.css';
 
 import {mono, sans} from '@/constants/fonts';
 import config from '@/constants/site-config';

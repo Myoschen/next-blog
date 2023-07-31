@@ -1,7 +1,8 @@
 import {defineDocumentType, makeSource} from 'contentlayer/source-files';
-import rehypePrism from 'rehype-prism-plus';
+import rehypePrettyCode, {type Options} from 'rehype-pretty-code';
 
-export const Post = defineDocumentType(() => ({
+// definitions
+const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: '**/*.md',
   fields: {
@@ -30,8 +31,17 @@ export const Post = defineDocumentType(() => ({
   },
 }));
 
+const rehypePrettyCodeOptions: Options = {
+  theme: {
+    light: 'vitesse-light',
+    dark: 'vitesse-dark',
+  },
+};
+
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post],
-  markdown: {rehypePlugins: [[rehypePrism, {ignoreMissing: true}]]},
+  markdown: {
+    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+  },
 });

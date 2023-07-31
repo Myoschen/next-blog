@@ -6,7 +6,7 @@ date: 2023-07-29
 
 ## H2 title
 
-```tsx showLineNumbers {5,15-17}
+```tsx showLineNumbers title="_app.tsx" {3}
 import '@/styles/globals.css';
 
 import type {AppProps} from 'next/app';

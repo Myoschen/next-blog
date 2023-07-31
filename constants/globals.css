@@ -1,13 +1,6 @@
+/* styling rehype-pretty-code */
+@import url('./syntax-highlight.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  pre,
-  code,
-  div[class*='language-'],
-  code[class*='language-'],
-  pre[class*='language-'] {
-    @apply text-xs font-mono;
-  }
-}
