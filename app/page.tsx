@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {compareDesc, format, parseISO} from 'date-fns';
 
 import config from '@/constants/site-config';
+import ThemeSwitcher from '@/components/theme-switcher';
 import {allPosts, Post} from '@/content/generated';
 
 function PostCard(post: Post) {
@@ -18,7 +19,7 @@ function PostCard(post: Post) {
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
-      <p>{post.description}</p>
+      <p className="dark:text-gray-50">{post.description}</p>
     </div>
   );
 }
@@ -29,10 +30,11 @@ export default function Home() {
   );
 
   return (
-    <div className="mx-auto max-w-screen-md px-4 py-8 md:px-0">
-      <h1 className="mb-8 text-center text-4xl font-semibold">
-        {config.title}
-      </h1>
+    <div className="grid gap-8">
+      <div className="flex items-center justify-between">
+        <h1 className="text-4xl font-semibold">{config.title}</h1>
+        <ThemeSwitcher />
+      </div>
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
