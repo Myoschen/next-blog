@@ -8,6 +8,9 @@ module.exports = {
         sans: 'var(--sans)',
         mono: 'var(--mono)',
       },
+      backgroundImage: {
+        grainy: 'url("/grainy.svg")',
+      },
       // https://alphaos.app/blog/disable-tailwind-prose-code
       typography: {
         DEFAULT: {

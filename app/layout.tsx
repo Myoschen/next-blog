@@ -18,7 +18,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         className={cn(
           sans.variable,
           mono.variable,
-          'bg-gray-50 font-sans text-zinc-900 dark:bg-zinc-900 dark:text-gray-50',
+          'bg-gray-50 bg-grainy font-sans text-zinc-900 bg-blend-soft-light transition-colors dark:bg-zinc-900 dark:text-gray-50',
         )}
       >
         <Providers>
