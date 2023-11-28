@@ -1,20 +1,20 @@
-import {LucideProps, Moon, Sun} from 'lucide-react';
+import { cn } from '@/utils/classnames'
 
-import {cn} from '@/utils/classnames';
+import { LucideProps, Moon, Sun } from 'lucide-react'
 
 const iconMap = {
   moon: Moon,
   sun: Sun,
-};
+}
 
-type IconName = keyof typeof iconMap;
+type IconName = keyof typeof iconMap
 
 type IconProps = LucideProps & {
-  name: IconName;
-};
+  name: IconName
+}
 
-export default function Icon({name, className, ...props}: IconProps) {
-  const Comp = iconMap[name];
+export default function Icon({ name, className, ...props }: IconProps) {
+  const Comp = iconMap[name]
 
-  return <Comp className={cn(className)} {...props} />;
+  return <Comp className={cn(className)} {...props} />
 }

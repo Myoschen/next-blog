@@ -1,5 +1,5 @@
-import {defineDocumentType, makeSource} from 'contentlayer/source-files';
-import rehypePrettyCode, {type Options} from 'rehype-pretty-code';
+import { defineDocumentType, makeSource } from 'contentlayer/source-files'
+import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 
 // definitions
 const Post = defineDocumentType(() => ({
@@ -22,21 +22,21 @@ const Post = defineDocumentType(() => ({
   computedFields: {
     slug: {
       type: 'string',
-      resolve: (post) => post._raw.flattenedPath,
+      resolve: post => post._raw.flattenedPath,
     },
     url: {
       type: 'string',
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
+      resolve: post => `/posts/${post._raw.flattenedPath}`,
     },
   },
-}));
+}))
 
 const rehypePrettyCodeOptions: Options = {
   theme: {
     light: 'vitesse-light',
     dark: 'vitesse-dark',
   },
-};
+}
 
 export default makeSource({
   contentDirPath: 'content',
@@ -44,4 +44,4 @@ export default makeSource({
   markdown: {
     rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },
-});
+})

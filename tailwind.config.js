@@ -19,8 +19,8 @@ module.exports = {
             'code::after': false,
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false,
-            pre: false,
-            code: false,
+            'pre': false,
+            'code': false,
             'pre code': false,
             'code::before': false,
             'code::after': false,
@@ -30,4 +30,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/typography')],
-};
+}

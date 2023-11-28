@@ -1,19 +1,19 @@
-import '@/constants/globals.css';
+import '@/constants/globals.css'
 
-import {mono, sans} from '@/constants/fonts';
-import config from '@/constants/site-config';
-import {cn} from '@/utils/classnames';
-import Layout from '@/components/layout';
-import Providers from '@/components/providers';
+import Layout from '@/components/layout'
+import Providers from '@/components/providers'
+import { mono, sans } from '@/constants/fonts'
+import config from '@/constants/site-config'
+import { cn } from '@/utils/classnames'
 
 export const metadata = {
   title: `${config.title} - @${config.author}`,
   description: config.description,
-};
+}
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang={'en'} suppressHydrationWarning={true}>
       <body
         className={cn(
           sans.variable,
@@ -26,5 +26,5 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </Providers>
       </body>
     </html>
-  );
+  )
 }
