@@ -4,7 +4,8 @@ import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 // definitions
 const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: '**/*.md',
+  filePathPattern: '**/*.mdx',
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -31,7 +32,7 @@ const Post = defineDocumentType(() => ({
   },
 }))
 
-const rehypePrettyCodeOptions: Options = {
+const options: Options = {
   theme: {
     light: 'vitesse-light',
     dark: 'vitesse-dark',
@@ -41,7 +42,7 @@ const rehypePrettyCodeOptions: Options = {
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Post],
-  markdown: {
-    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
+  mdx: {
+    rehypePlugins: [[rehypePrettyCode, options]],
   },
 })

@@ -1,19 +1,32 @@
+import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { allPosts } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 
-import { allPosts } from '@/content/generated'
+import MDXContent from '@/components/mdx-content'
 
-export const generateStaticParams = async () =>
-  allPosts.map(post => ({ slug: post.slug }))
-
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
-  const post = allPosts.find(post => post.slug === params.slug)
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
-  return { title: post.title }
+interface PostPageProps {
+  params: { slug: string }
 }
 
-const PostLayout = ({ params }: { params: { slug: string } }) => {
+export async function generateStaticParams() {
+  return allPosts.map(post => ({
+    slug: post.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: PostPageProps) {
   const post = allPosts.find(post => post.slug === params.slug)
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
+  return {
+    title: post.title,
+  } satisfies Metadata
+}
+
+export default function PostPage({ params }: PostPageProps) {
+  const post = allPosts.find(post => post.slug === params.slug)
+
+  if (!post) notFound()
 
   return (
     <div className={'grid gap-8'}>
@@ -23,12 +36,7 @@ const PostLayout = ({ params }: { params: { slug: string } }) => {
         </time>
         <h1 className={'text-3xl font-semibold'}>{post.title}</h1>
       </div>
-      <article
-        className={'prose max-w-none dark:prose-invert'}
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      />
+      <MDXContent code={post.body.code} />
     </div>
   )
 }
-
-export default PostLayout

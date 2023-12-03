@@ -1,9 +1,27 @@
 import Link from 'next/link'
+import { allPosts, Post } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
 
 import ThemeSwitcher from '@/components/theme-switcher'
 import config from '@/constants/site-config'
-import { allPosts, Post } from '@/content/generated'
+
+export default function Home() {
+  const posts = allPosts.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date)),
+  )
+
+  return (
+    <div className={'grid gap-8'}>
+      <div className={'flex items-center justify-between'}>
+        <h1 className={'text-4xl font-semibold'}>{config.title}</h1>
+        <ThemeSwitcher />
+      </div>
+      {posts.map((post, idx) => (
+        <PostCard key={idx} {...post} />
+      ))}
+    </div>
+  )
+}
 
 function PostCard(post: Post) {
   return (
@@ -20,24 +38,6 @@ function PostCard(post: Post) {
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
       <p className={'dark:text-gray-50'}>{post.description}</p>
-    </div>
-  )
-}
-
-export default function Home() {
-  const posts = allPosts.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date)),
-  )
-
-  return (
-    <div className={'grid gap-8'}>
-      <div className={'flex items-center justify-between'}>
-        <h1 className={'text-4xl font-semibold'}>{config.title}</h1>
-        <ThemeSwitcher />
-      </div>
-      {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
     </div>
   )
 }
