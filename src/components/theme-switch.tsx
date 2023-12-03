@@ -5,9 +5,9 @@ import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import Icon from '@/components/ui/icon'
 import { useMounted } from '@/hooks/use-mounted'
-import { cn } from '@/utils/classnames'
+import { cn } from '@/lib/utils'
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitch() {
   const isMounted = useMounted()
   const { theme, setTheme } = useTheme()
 
