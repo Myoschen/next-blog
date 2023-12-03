@@ -6,24 +6,20 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "verbatimModuleSyntax": true,
     "paths": {
       "@/*": ["./src/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
-    }
+    },
+    "plugins": [{"name": "next"}]
   },
   "include": [
     "next-env.d.ts",
@@ -32,5 +28,7 @@
     ".next/types/**/*.ts",
     ".contentlayer/generated"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

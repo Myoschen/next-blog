@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import { allPosts, Post } from 'contentlayer/generated'
+import { allPosts, type Post } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
 
-import ThemeSwitcher from '@/components/theme-switcher'
+import ThemeSwitch from '@/components/theme-switch'
 import config from '@/constants/site-config'
 
-export default function Home() {
+export default function HomePage() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date)),
   )
@@ -14,7 +14,7 @@ export default function Home() {
     <div className={'grid gap-8'}>
       <div className={'flex items-center justify-between'}>
         <h1 className={'text-4xl font-semibold'}>{config.title}</h1>
-        <ThemeSwitcher />
+        <ThemeSwitch />
       </div>
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />

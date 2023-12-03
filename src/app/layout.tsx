@@ -6,7 +6,7 @@ import { GeistSans } from 'geist/font/sans'
 import Layout from '@/components/layout'
 import Providers from '@/components/providers'
 import config from '@/constants/site-config'
-import { cn } from '@/utils/classnames'
+import { cn } from '@/lib/utils'
 
 export const metadata = {
   title: `${config.title} - @${config.author}`,
