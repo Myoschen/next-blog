@@ -30,13 +30,15 @@ export default function PostPage({ params }: PostPageProps) {
 
   return (
     <div className={'grid gap-8'}>
-      <div>
-        <time dateTime={post.date} className={'mb-1 text-xs text-gray-600'}>
+      <div className={'flex flex-col gap-y-1'}>
+        <h1 className={'text-3xl font-semibold'}>{post.title}</h1>
+        <time className={'mb-1 text-xs text-zinc-400 dark:text-zinc-700'} dateTime={post.date}>
           {format(parseISO(post.date), 'LLLL d, yyyy')}
         </time>
-        <h1 className={'text-3xl font-semibold'}>{post.title}</h1>
       </div>
-      <MDXContent code={post.body.code} />
+      <article className={'prose'}>
+        <MDXContent code={post.body.code} />
+      </article>
     </div>
   )
 }
