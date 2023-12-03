@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <Button size={'icon'} onClick={toggleTheme}>
+    <Button variant={'ghost'} size={'icon'} onClick={toggleTheme}>
       {isDark
         ? <SunIcon className={'h-5 w-5'} />
         : <MoonIcon className={'h-5 w-5'} /> }

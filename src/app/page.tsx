@@ -28,8 +28,8 @@ function PostCard(post: Post) {
     <div className={'mb-8'}>
       <h2 className={'mb-1 text-xl font-semibold'}>
         <Link
+          className={'text-emerald-600 transition-opacity ease-out hover:opacity-50'}
           href={post.url}
-          className={'text-blue-700 hover:text-blue-900 dark:text-blue-400'}
         >
           {post.title}
         </Link>

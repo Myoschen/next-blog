@@ -31,12 +31,12 @@ export default function PostPage({ params }: PostPageProps) {
   return (
     <div className={'grid gap-8'}>
       <div className={'flex flex-col gap-y-1'}>
-        <h1 className={'text-3xl font-semibold'}>{post.title}</h1>
-        <time className={'mb-1 text-xs text-zinc-400 dark:text-zinc-700'} dateTime={post.date}>
+        <h1 className={'text-3xl font-bold'}>{post.title}</h1>
+        <time className={'mb-1 text-xs text-zinc-700 dark:text-zinc-400'} dateTime={post.date}>
           {format(parseISO(post.date), 'LLLL d, yyyy')}
         </time>
       </div>
-      <article className={'prose'}>
+      <article className={'prose prose-zinc max-w-none dark:prose-invert'}>
         <MDXContent code={post.body.code} />
       </article>
     </div>

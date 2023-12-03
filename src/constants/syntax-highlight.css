@@ -28,7 +28,6 @@ div[data-rehype-pretty-code-fragment] code {
 div[data-rehype-pretty-code-fragment] [data-line] {
   padding-left: 0.5rem;
   padding-right: 0.75rem;
-
   border-left-width: 4px;
   border-left-color: transparent;
 }
@@ -43,14 +42,13 @@ code[data-line-numbers] [data-line]::before {
   content: counter(lineNumber);
   display: inline-block;
   text-align: right;
-
   margin-right: 0.75rem;
   width: 1rem;
-  color: rgb(255 255 255 / 0.2);
+  opacity: .5;
 }
 
 /* line highlights */
 div[data-rehype-pretty-code-fragment] [data-highlighted-line] {
-  border-left-color: #3c9375;
-  background-color: rgba(237, 255, 232, 0.1);
+  border-left-color: hsl(159, 42%, 41%);
+  background-color: hsla(107, 100%, 95%, 0.1)
 }
