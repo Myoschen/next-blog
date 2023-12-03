@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: 'var(--sans)',
-        mono: 'var(--mono)',
+        sans: 'var(--font-geist-sans)',
+        mono: 'var(--font-geist-mono)',
       },
       backgroundImage: {
         grainy: 'url("/grainy.svg")',

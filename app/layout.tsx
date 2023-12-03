@@ -1,8 +1,10 @@
 import '@/constants/globals.css'
 
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+
 import Layout from '@/components/layout'
 import Providers from '@/components/providers'
-import { mono, sans } from '@/constants/fonts'
 import config from '@/constants/site-config'
 import { cn } from '@/utils/classnames'
 
@@ -16,8 +18,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang={'en'} suppressHydrationWarning={true}>
       <body
         className={cn(
-          sans.variable,
-          mono.variable,
+          GeistSans.variable,
+          GeistMono.variable,
           'bg-gray-50 bg-grainy font-sans text-zinc-900 bg-blend-soft-light transition-colors dark:bg-zinc-900 dark:text-gray-50',
         )}
       >
