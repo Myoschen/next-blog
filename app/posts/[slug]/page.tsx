@@ -1,6 +1,6 @@
-import { allPosts } from '@/content/generated'
-
 import { format, parseISO } from 'date-fns'
+
+import { allPosts } from '@/content/generated'
 
 export const generateStaticParams = async () =>
   allPosts.map(post => ({ slug: post.slug }))

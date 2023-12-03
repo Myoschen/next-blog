@@ -1,6 +1,6 @@
-import { cn } from '@/utils/classnames'
-
 import { LucideProps, Moon, Sun } from 'lucide-react'
+
+import { cn } from '@/utils/classnames'
 
 const iconMap = {
   moon: Moon,
