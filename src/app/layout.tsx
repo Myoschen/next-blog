@@ -13,11 +13,11 @@ export const metadata = {
   description: config.description,
 }
 
-// FIXME fix the noise background
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={'en'} suppressHydrationWarning={true}>
-      <body className={cn('font-sans', GeistSans.variable, GeistMono.variable)}>
+      <body className={cn('relative font-sans', GeistSans.variable, GeistMono.variable)}>
+        <div className={'absolute inset-0 bg-noise bg-fixed opacity-[.15]'} />
         <Providers>
           <Layout>{children}</Layout>
         </Providers>

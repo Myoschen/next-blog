@@ -51,7 +51,7 @@ module.exports = {
         mono: ['var(--font-geist-mono)', ...fontFamily.mono],
       },
       backgroundImage: {
-        grainy: 'url("/grainy.svg")',
+        noise: 'url("/noise.svg")',
       },
       typography: {
         DEFAULT: {
