@@ -5,8 +5,8 @@
 
   // enable eslint auto fix
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": false
+    "source.fixAll": "explicit",
+    "source.organizeImports": "never"
   },
 
   // enable eslint for all supported languges
