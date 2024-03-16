@@ -19,23 +19,24 @@ module.exports = {
     },
   },
   rules: {
-    // stylistic
     ...customized.rules,
     '@stylistic/jsx-curly-brace-presence': ['error', 'always'],
 
-    // sort imports
     'simple-import-sort/exports': 'error',
-    'simple-import-sort/imports': ['error', {
-      groups: [
-        ['^\\u0000'],
-        ['^react', '^next', '@?\\w'],
-        ['^@/.*'],
-        ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-        ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-      ],
-    }],
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          ['^\\u0000'],
+          ['^react', '^next', '@?\\w'],
+          ['^~/.*'],
+          ['^@/.*'],
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+        ],
+      },
+    ],
 
-    // unused imports
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',

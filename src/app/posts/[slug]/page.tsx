@@ -1,32 +1,30 @@
-import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { allPosts } from 'contentlayer/generated'
 import { format, parseISO } from 'date-fns'
 
-import MDXContent from '@/components/mdx-content'
+import { posts } from '~/.velite'
 
-interface PostPageProps {
+interface PostProps {
   params: { slug: string }
 }
 
-export async function generateStaticParams() {
-  return allPosts.map(post => ({
-    slug: post.slug,
-  }))
+function getPostBySlug(slug: string) {
+  return posts.find(post => post.slug === slug)
 }
 
-export async function generateMetadata({ params }: PostPageProps) {
-  const post = allPosts.find(post => post.slug === params.slug)
-  if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
-  return {
-    title: post.title,
-  } satisfies Metadata
+export function generateMetadata({ params }: PostProps) {
+  const post = getPostBySlug(params.slug)
+  if (post === undefined) return {}
+  return { title: post.title, description: post.description }
 }
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = allPosts.find(post => post.slug === params.slug)
+export function generateStaticParams() {
+  return posts.map(post => ({ slug: post.slug }))
+}
 
-  if (!post) notFound()
+export default function PostPage({ params }: PostProps) {
+  const post = getPostBySlug(params.slug)
+
+  if (post === undefined) notFound()
 
   return (
     <div className={'grid gap-8'}>
@@ -37,7 +35,7 @@ export default function PostPage({ params }: PostPageProps) {
         </time>
       </div>
       <article className={'prose prose-zinc max-w-none dark:prose-invert'}>
-        <MDXContent code={post.body.code} />
+        <p dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>
     </div>
   )

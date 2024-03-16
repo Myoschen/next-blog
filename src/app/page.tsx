@@ -1,12 +1,13 @@
 import Link from 'next/link'
-import { allPosts, type Post } from 'contentlayer/generated'
 import { compareDesc, format, parseISO } from 'date-fns'
+
+import { type Post, posts } from '~/.velite'
 
 import ThemeSwitch from '@/components/theme-switch'
 import config from '@/constants/site-config'
 
 export default function HomePage() {
-  const posts = allPosts.sort((a, b) =>
+  const sorted = posts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date)),
   )
 
@@ -16,7 +17,7 @@ export default function HomePage() {
         <h1 className={'text-4xl font-semibold'}>{config.title}</h1>
         <ThemeSwitch />
       </div>
-      {posts.map((post, idx) => (
+      {sorted.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
     </div>
@@ -29,7 +30,7 @@ function PostCard(post: Post) {
       <h2 className={'mb-1 text-xl font-semibold'}>
         <Link
           className={'text-emerald-600 transition-opacity ease-out hover:opacity-50'}
-          href={post.url}
+          href={`/posts/${post.slug}`}
         >
           {post.title}
         </Link>
