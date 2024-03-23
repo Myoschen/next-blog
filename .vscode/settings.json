@@ -1,15 +1,14 @@
 {
-  // disable prettier, format on save
   "prettier.enable": false,
   "editor.formatOnSave": false,
-
-  // enable eslint auto fix
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "never"
   },
-
-  // enable eslint for all supported languges
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
