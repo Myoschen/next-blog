@@ -33,7 +33,7 @@ export default [
     plugins: {
       'react': pluginReact,
       'react-hooks': pluginReactHooks,
-      'next': pluginNext,
+      '@next/next': pluginNext,
     },
     rules: {
       'style/jsx-curly-brace-presence': ['error', 'always'],

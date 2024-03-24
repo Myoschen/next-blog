@@ -1,8 +1,6 @@
 'use client'
 import { useTheme } from 'next-themes'
-import { MoonIcon, SunIcon } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
 import { useMounted } from '@/hooks/use-mounted'
 
 export default function ThemeSwitch() {
@@ -20,10 +18,8 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <Button variant={'ghost'} size={'icon'} onClick={toggleTheme}>
-      {isDark
-        ? <SunIcon className={'h-5 w-5'} />
-        : <MoonIcon className={'h-5 w-5'} /> }
-    </Button>
+    <button onClick={toggleTheme}>
+      {isDark ? 'light' : 'dark' }
+    </button>
   )
 }

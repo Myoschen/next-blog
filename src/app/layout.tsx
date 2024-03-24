@@ -1,25 +1,30 @@
-import '@/constants/globals.css'
+import '@/app/globals.css'
 
+import type { Metadata } from 'next'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 
-import Layout from '@/components/layout'
 import Providers from '@/components/providers'
-import config from '@/constants/site-config'
+import { config } from '@/constants/site-config'
 import { cn } from '@/lib/utils'
 
-export const metadata = {
-  title: `${config.title} - @${config.author}`,
-  description: config.description,
+export const metadata: Metadata = {
+  title: {
+    template: `%s / ${config.meta.author}`,
+    default: config.meta.title,
+    absolute: `${config.meta.title} / ${config.meta.author}`,
+  },
+  description: config.meta.description,
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={'en'} suppressHydrationWarning={true}>
-      <body className={cn('relative font-sans', GeistSans.variable, GeistMono.variable)}>
-        <div className={'absolute inset-0 bg-noise bg-fixed opacity-[.15]'} />
+      <body className={cn(GeistSans.variable, GeistMono.variable)}>
         <Providers>
-          <Layout>{children}</Layout>
+          <main className={'relative mx-auto my-8 max-w-xl px-4 md:my-16'}>
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

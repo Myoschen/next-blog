@@ -25,6 +25,7 @@ export default {
   reactStrictMode: true,
   output: 'export',
   images: { unoptimized: true },
+  experimental: { typedRoutes: true },
   webpack: (config) => {
     config.plugins.push(new VeliteWebpackPlugin())
     return config
