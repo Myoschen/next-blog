@@ -8,7 +8,7 @@ slug: code
 
 ## Code
 
-```tsx
+```tsx twoslash
 import { useEffect, useState } from 'react'
 
 export function useMounted() {
@@ -19,5 +19,6 @@ export function useMounted() {
   }, [])
 
   return isMounted
+  //      ^?
 }
 ```

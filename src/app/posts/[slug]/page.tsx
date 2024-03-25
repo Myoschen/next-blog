@@ -38,7 +38,7 @@ export default function Post({ params }: Props) {
           <span>{`${post.metadata.readingTime} mins`}</span>
         </div>
       </div>
-      <article className={'prose max-w-none dark:prose-invert'}>
+      <article className={'prose dark:prose-invert'}>
         <p dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>
     </div>

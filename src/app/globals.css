@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('@shikijs/twoslash/style-rich.css');
+
 @layer base {
   :root {
     --background: 0 0% 90%;
     --foreground: 0 0% 5%;
   }
-  
+
   .dark {
     --background: 0 0% 5%;
     --foreground: 0 0% 90%;
@@ -15,7 +17,28 @@
 }
 
 @layer base {
+  pre[data-theme*=" "] {
+    @apply rounded-lg text-sm p-4;
+  }
+
+  pre[data-theme*=" "],
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    
+    pre[data-theme*=" "],
+    code[data-theme*=" "],
+    code[data-theme*=" "] span {
+      color: var(--shiki-dark) !important;
+      background-color: var(--shiki-dark-bg) !important;
+    }
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased overflow-hidden;
   }
 }

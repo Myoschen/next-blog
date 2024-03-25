@@ -16,6 +16,7 @@ module.exports = {
       },
       typography: ({ theme }) => ({
         DEFAULT: {
+          maxWidth: 'none',
           css: {
             h1: { fontSize: theme('fontSize.base') },
             h2: { fontSize: theme('fontSize.base') },
@@ -23,6 +24,8 @@ module.exports = {
             h4: { fontSize: theme('fontSize.base') },
             h5: { fontSize: theme('fontSize.base') },
             h6: { fontSize: theme('fontSize.base') },
+            pre: false,
+            code: false,
           },
         },
       }),
