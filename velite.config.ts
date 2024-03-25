@@ -1,4 +1,4 @@
-import { rendererClassic, rendererRich, transformerTwoslash } from '@shikijs/twoslash'
+import { transformerTwoslash } from '@shikijs/twoslash'
 import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 import { defineConfig, defineCollection, s } from 'velite'
 
