@@ -6,19 +6,19 @@
 
 @layer base {
   :root {
-    --background: 0 0% 90%;
+    --background: 0 0% 95%;
     --foreground: 0 0% 5%;
   }
 
   .dark {
     --background: 0 0% 5%;
-    --foreground: 0 0% 90%;
+    --foreground: 0 0% 95%;
   }
 }
 
 @layer base {
   pre[data-theme*=" "] {
-    @apply text-sm p-4 rounded-lg overflow-auto;
+    @apply text-sm p-4 shadow-sm rounded-lg overflow-auto;
   }
 
   pre[data-theme*=" "],
