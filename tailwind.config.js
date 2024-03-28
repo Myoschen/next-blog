@@ -18,12 +18,12 @@ module.exports = {
         DEFAULT: {
           maxWidth: 'none',
           css: {
-            h1: { fontSize: theme('fontSize.base') },
-            h2: { fontSize: theme('fontSize.base') },
-            h3: { fontSize: theme('fontSize.base') },
-            h4: { fontSize: theme('fontSize.base') },
-            h5: { fontSize: theme('fontSize.base') },
-            h6: { fontSize: theme('fontSize.base') },
+            h1: { fontSize: theme('fontSize.sm') },
+            h2: { fontSize: theme('fontSize.sm') },
+            h3: { fontSize: theme('fontSize.sm') },
+            h4: { fontSize: theme('fontSize.sm') },
+            h5: { fontSize: theme('fontSize.sm') },
+            h6: { fontSize: theme('fontSize.sm') },
             pre: false,
             code: false,
           },

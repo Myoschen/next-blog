@@ -23,9 +23,9 @@ interface PostItemProps extends React.ComponentPropsWithoutRef<'li'> {
 
 export const PostItem = forwardRef<HTMLLIElement, PostItemProps>(({ post, className, ...props }, ref) => {
   return (
-    <li ref={ref} className={cn('w-max transition-opacity duration-300 hover:opacity-50', className)} {...props}>
-      <Link className={'flex items-center gap-x-8'} href={`/posts/${post.slug}`}>
-        <time className={'font-mono text-foreground/75'} dateTime={post.date}>
+    <li ref={ref} className={cn('transition-opacity duration-300 hover:opacity-50', className)} {...props}>
+      <Link className={'flex gap-x-8'} href={`/posts/${post.slug}`}>
+        <time className={'shrink-0 font-mono text-foreground/75'} dateTime={post.date}>
           {format(parseISO(post.date), 'yyyy-MM-dd')}
         </time>
         <p>{post.title}</p>

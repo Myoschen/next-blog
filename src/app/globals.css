@@ -18,7 +18,7 @@
 
 @layer base {
   pre[data-theme*=" "] {
-    @apply rounded-lg text-sm p-4;
+    @apply text-sm p-4 rounded-lg overflow-auto;
   }
 
   pre[data-theme*=" "],
@@ -29,7 +29,6 @@
   }
 
   @media (prefers-color-scheme: dark) {
-    
     pre[data-theme*=" "],
     code[data-theme*=" "],
     code[data-theme*=" "] span {
@@ -39,6 +38,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased overflow-hidden;
+    @apply text-sm font-sans antialiased bg-background text-foreground;
   }
 }
