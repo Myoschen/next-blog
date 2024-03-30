@@ -28,13 +28,11 @@
     background-color: var(--shiki-light-bg) !important;
   }
 
-  @media (prefers-color-scheme: dark) {
-    pre[data-theme*=" "],
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
-      color: var(--shiki-dark) !important;
-      background-color: var(--shiki-dark-bg) !important;
-    }
+  .dark pre[data-theme*=" "],
+  .dark code[data-theme*=" "],
+  .dark code[data-theme*=" "] span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
   }
 
   body {

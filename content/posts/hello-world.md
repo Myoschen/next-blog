@@ -7,3 +7,5 @@ slug: hello-world
 
 
 ## Hello World
+
+This is a test post.

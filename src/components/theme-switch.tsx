@@ -6,10 +6,9 @@ import { useMounted } from '@/hooks/use-mounted'
 export default function ThemeSwitch() {
   const isMounted = useMounted()
   const { theme, setTheme } = useTheme()
-  const isDark = theme === 'dark'
 
   const toggleTheme = () => {
-    const nextTheme = isDark ? 'light' : 'dark'
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(nextTheme)
   }
 
@@ -18,8 +17,8 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <button onClick={toggleTheme}>
-      {isDark ? 'light' : 'dark' }
+    <button className={'transition-opacity duration-300 hover:opacity-50'} onClick={toggleTheme}>
+      {theme}
     </button>
   )
 }

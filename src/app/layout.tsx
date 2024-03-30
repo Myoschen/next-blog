@@ -5,16 +5,16 @@ import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 
 import Providers from '@/components/providers'
-import { config } from '@/constants/site-config'
+import { meta } from '@/constants/site-config'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: {
-    template: `%s / ${config.meta.author}`,
-    default: config.meta.title,
-    absolute: `${config.meta.title} / ${config.meta.author}`,
+    template: `%s / ${meta.author}`,
+    default: meta.title,
+    absolute: `${meta.title} / ${meta.author}`,
   },
-  description: config.meta.description,
+  description: meta.description,
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -22,9 +22,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang={'en'} suppressHydrationWarning={true}>
       <body className={cn(GeistSans.variable, GeistMono.variable)}>
         <Providers>
-          <main className={'relative mx-auto my-8 max-w-xl px-4 md:my-16'}>
+          <div className={'relative mx-auto my-8 max-w-xl px-8 md:my-16'}>
             {children}
-          </main>
+          </div>
         </Providers>
       </body>
     </html>

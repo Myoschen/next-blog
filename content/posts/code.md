@@ -6,7 +6,7 @@ slug: code
 ---
 
 
-## Code
+## Code Block
 
 ```tsx twoslash
 import { useEffect, useState } from 'react'
