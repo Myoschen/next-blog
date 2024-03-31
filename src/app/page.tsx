@@ -40,7 +40,7 @@ export default function Home() {
           <ul className={'space-y-2'}>
             {sorted.map(post => (
               <li key={post.slug} className={'w-max transition-opacity duration-300 hover:opacity-50'}>
-                <Link className={'flex gap-x-8'} href={`/posts/${post.slug}`}>
+                <Link className={'flex gap-x-4'} href={`/posts/${post.slug}`}>
                   <time className={'shrink-0 font-mono text-foreground/75'} dateTime={post.date}>
                     {format(parseISO(post.date), 'yyyy-MM-dd')}
                   </time>
@@ -51,7 +51,7 @@ export default function Home() {
           </ul>
         </SectionContent>
       </Section>
-      <footer className={'flex items-center gap-x-2'}>
+      <footer className={'flex items-center gap-x-4'}>
         <p>{`© ${copyright.year} ${copyright.owner}`}</p>
         <a
           className={'transition-opacity duration-300 hover:opacity-50'}
