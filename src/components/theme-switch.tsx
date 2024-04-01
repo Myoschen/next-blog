@@ -1,4 +1,5 @@
 'use client'
+
 import { useTheme } from 'next-themes'
 
 import { useMounted } from '@/hooks/use-mounted'
@@ -8,7 +9,7 @@ export default function ThemeSwitch() {
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    const nextTheme = theme === 'dark' ? 'system' : theme === 'light' ? 'dark' : 'light'
     setTheme(nextTheme)
   }
 
