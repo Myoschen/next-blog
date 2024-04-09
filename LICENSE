@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Myoschen
+Copyright (c) 2024 Myoschen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
