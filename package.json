@@ -15,9 +15,9 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "@formkit/tempo": "^0.0.19",
     "@radix-ui/react-slot": "^1.0.2",
     "clsx": "^2.1.0",
-    "date-fns": "^3.6.0",
     "geist": "^1.2.2",
     "next": "14.1.4",
     "next-themes": "^0.3.0",

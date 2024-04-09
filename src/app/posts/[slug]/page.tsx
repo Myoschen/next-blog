@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { format, parseISO } from 'date-fns'
+import { date, format } from '@formkit/tempo'
 
 import { posts } from '~/.velite'
 
@@ -32,7 +32,7 @@ export default function Post({ params }: Props) {
         <h1 className={'font-bold'}>{post.title}</h1>
         <div className={'flex items-center gap-x-1.5 text-foreground/75'}>
           <time className={'text-sm'} dateTime={post.date}>
-            {format(parseISO(post.date), 'LLLL d, yyyy')}
+            {format(date(post.date), { date: 'medium' })}
           </time>
           <span>{'•'}</span>
           <span>{`${post.metadata.readingTime} mins`}</span>
