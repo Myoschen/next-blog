@@ -24,8 +24,7 @@ export function sortDate(
 
   if (options.order === 'asc') {
     return diff > 0 ? 1 : -1
-  }
-  else {
+  } else {
     return diff > 0 ? -1 : 1
   }
 }
