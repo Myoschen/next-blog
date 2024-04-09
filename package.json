@@ -8,8 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
     "commit": "cz",
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm"
@@ -36,6 +36,7 @@
     "@types/node": "20.11.30",
     "@types/react": "18.2.69",
     "@types/react-dom": "18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.3.1",
     "autoprefixer": "10.4.19",
     "commitizen": "^4.3.0",
