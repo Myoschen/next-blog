@@ -1,4 +1,5 @@
 import { transformerTwoslash } from '@shikijs/twoslash'
+import type { Route } from 'next'
 import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 import { defineConfig, defineCollection, s } from 'velite'
 
@@ -7,18 +8,17 @@ const posts = defineCollection({
   pattern: 'posts/**/*.md',
   schema: s
     .object({
-      title: s.string(),
-      description: s.string(),
+      title: s.string().toLowerCase(),
+      description: s.string().toLowerCase(),
       date: s.isodate(),
       slug: s.slug('posts'),
-      excerpt: s.excerpt(),
       metadata: s.metadata(),
       content: s.markdown(),
     })
-    .transform(data => ({ ...data, permalink: `/blog/${data.slug}` })),
+    .transform(data => ({ ...data, permalink: `/posts/${data.slug}` as Route<'/posts/${string}'> })),
 })
 
-const prettyCodeOptions: Options = {
+const rehypePrettyCodeOptions: Options = {
   theme: { light: 'vitesse-light', dark: 'vitesse-dark' },
   transformers: [transformerTwoslash()],
 }
@@ -26,6 +26,7 @@ const prettyCodeOptions: Options = {
 export default defineConfig({
   collections: { posts },
   markdown: {
-    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
+    // remarkPlugins: [],
+    rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },
 })

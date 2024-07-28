@@ -1,3 +1,5 @@
+import { getYear } from 'date-fns'
+
 export const meta = {
   title: 'next blog',
   description: 'this is a blog built by Next.js and Contentlayer.',
@@ -5,26 +7,32 @@ export const meta = {
 }
 
 export const intro = {
-  title: 'Welcome !',
-  description: 'Hello, i\'m myos, a front-end developer.',
+  title: 'welcome !',
+  description: 'hello, i\'m myos, a front-end developer.',
 }
 
 export const projects = [
   {
-    name: 'next-social-media',
-    description: 'a simple social media app.',
-    url: 'https://github.com/Myoschen/next-social-media',
+    name: 'portfolio',
+    description: 'my portfolio.',
+    url: 'https://github.com/Myoschen/portfolio',
   },
   {
     name: 'next-blog',
-    description: 'a minimal blog.',
+    description: 'a minimal blog is built with next, velite.',
     url: 'https://github.com/Myoschen/next-blog',
+  },
+  {
+    name: 'create-app',
+    description: 'a cli tool to scaffold project.',
+    url: 'https://github.com/Myoschen/create-app',
+    disabled: true,
   },
 ]
 
 export const copyright = {
-  year: new Date().getFullYear(),
-  owner: 'Myoschen',
+  year: getYear(new Date()),
+  owner: 'myoschen',
 }
 
 export const social = {

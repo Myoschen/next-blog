@@ -7,10 +7,11 @@ import { Intro } from '@/components/intro'
 import { Section, SectionContent, SectionHeading } from '@/components/section'
 import ThemeSwitch from '@/components/theme-switch'
 import { copyright, intro, meta, projects, social } from '@/constants/site-config'
+import { cn } from '@/lib/utils'
 
 const sortedPosts = posts.sort((a, b) => compareDesc(a.date, b.date))
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="space-y-8">
       <Link href="/">
@@ -24,8 +25,11 @@ export default function Home() {
           <ul className="space-y-2">
             {projects.map(project => (
               <li key={project.name} className="w-max transition-opacity duration-300 hover:opacity-50">
-                <a className="flex gap-x-4" href={project.url} target="_blank" rel="noopener noreferrer">
-                  <p>{project.name}</p>
+                <a className={cn('flex gap-x-4', project.disabled && 'pointer-events-none')} href={project.url} target="_blank" rel="noopener noreferrer">
+                  <p>
+                    {project.name}
+                    {project.disabled && <span className="ml-1 text-xs">🚧</span>}
+                  </p>
                   <p>{project.description}</p>
                 </a>
               </li>
@@ -40,7 +44,7 @@ export default function Home() {
           <ul className="space-y-2">
             {sortedPosts.map(post => (
               <li key={post.slug} className="w-max transition-opacity duration-300 hover:opacity-50">
-                <Link className="flex gap-x-4" href={`/posts/${post.slug}`}>
+                <Link className="flex gap-x-4" href={post.permalink}>
                   <time className="shrink-0 font-mono text-foreground/75" dateTime={post.date}>
                     {format(post.date, 'yyyy-MM-dd')}
                   </time>

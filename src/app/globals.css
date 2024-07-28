@@ -17,20 +17,37 @@
 }
 
 @layer base {
-  pre[data-theme*=" "] {
+  code {
+    @apply text-xs p-1 rounded-md shadow-sm;
+
+    color: #1E754F;
+    background-color: #ffffff;
+  }
+
+  .dark code {
+    color: #4D9375;
+    background-color: #121212;
+  }
+
+  code::before, 
+  code::after {
+    content: unset !important;
+  }
+
+  [data-rehype-pretty-code-figure] pre {
     @apply text-sm p-4 shadow-sm rounded-lg overflow-auto;
   }
 
-  pre[data-theme*=" "],
-  code[data-theme*=" "],
-  code[data-theme*=" "] span {
+  [data-rehype-pretty-code-figure] pre,
+  [data-rehype-pretty-code-figure] code,
+  [data-rehype-pretty-code-figure] code span {
     color: var(--shiki-light) !important;
     background-color: var(--shiki-light-bg) !important;
   }
 
-  .dark pre[data-theme*=" "],
-  .dark code[data-theme*=" "],
-  .dark code[data-theme*=" "] span {
+  .dark [data-rehype-pretty-code-figure] pre,
+  .dark [data-rehype-pretty-code-figure] code,
+  .dark [data-rehype-pretty-code-figure] code span {
     color: var(--shiki-dark) !important;
     background-color: var(--shiki-dark-bg) !important;
   }

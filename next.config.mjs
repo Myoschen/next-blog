@@ -1,6 +1,6 @@
 import { build } from 'velite'
 
-// // https://velite.js.org/guide/with-nextjs
+/** @see https://velite.js.org/guide/with-nextjs */
 class VeliteWebpackPlugin {
   static started = false
 
@@ -13,9 +13,7 @@ class VeliteWebpackPlugin {
       if (VeliteWebpackPlugin.started) return
       VeliteWebpackPlugin.started = true
       const dev = compiler.options.mode === 'development'
-      this.options.watch = this.options.watch ?? dev
-      this.options.clean = this.options.clean ?? !dev
-      await build(this.options)
+      await build({ watch: dev, clean: !dev })
     })
   }
 }
