@@ -10,6 +10,12 @@
 <!-- project description -->
 Build a minimal blog with Next.js, Tailwind CSS, Velite.
 
+## Screenshots
+
+| Light Theme                          | Dark Theme                         |
+| ------------------------------------ | ---------------------------------- |
+| ![light](screenshot-light-theme.png) | ![dark](screenshot-dark-theme.png) |
+
 ## Usage
 
 ```bash
@@ -30,7 +36,7 @@ pnpm run dev
 
 ### Create posts
 
-Create a new Markdown file in the `content/posts` directory to add a new post.
+Create a new `Markdown` file in the `content/posts` directory to add a new post.
 
 ## License
 
