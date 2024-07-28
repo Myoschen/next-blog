@@ -5,7 +5,6 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "never"
   },
-  "eslint.experimental.useFlatConfig": true,
   "eslint.options": {
     "overrideConfigFile": "eslint.config.mjs"
   },
