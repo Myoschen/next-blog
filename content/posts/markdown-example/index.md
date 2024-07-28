@@ -44,11 +44,11 @@ You can use *italic* or **bold** or ***italic and bold*** text.
 
 ## Links
 
-You can create a [link](https://www.example.com).
+You can create a [link](https://github.com/Myoschen/next-blog).
 
 ## Images
 
-![Alt text](https://via.placeholder.com/150)
+![Alt text](example.png)
 
 ## Blockquotes
 
