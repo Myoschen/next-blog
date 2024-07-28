@@ -2,7 +2,7 @@ import { getYear } from 'date-fns'
 
 export const meta = {
   title: 'next blog',
-  description: 'this is a blog built by Next.js and Contentlayer.',
+  description: 'this is a blog built by Next.js and Velite.',
   author: 'myos',
 }
 
