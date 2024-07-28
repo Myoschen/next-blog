@@ -27,18 +27,18 @@ export default function Post({ params }: Props) {
   if (post === undefined) notFound()
 
   return (
-    <div className={'space-y-8'}>
-      <div className={'space-y-1'}>
-        <h1 className={'font-bold'}>{post.title}</h1>
-        <div className={'flex items-center gap-x-1.5 text-foreground/75'}>
-          <time className={'text-sm'} dateTime={post.date}>
+    <div className="space-y-8">
+      <div className="space-y-1">
+        <h1 className="font-bold">{post.title}</h1>
+        <div className="flex items-center gap-x-1.5 text-foreground/75">
+          <time className="text-sm" dateTime={post.date}>
             {format(post.date, 'yyyy-MM-dd')}
           </time>
-          <span>{'•'}</span>
+          <span>•</span>
           <span>{`${post.metadata.readingTime} mins`}</span>
         </div>
       </div>
-      <article className={'prose dark:prose-invert'}>
+      <article className="prose dark:prose-invert">
         <p dangerouslySetInnerHTML={{ __html: post.content }} />
       </article>
     </div>

@@ -19,10 +19,10 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang={'en'} suppressHydrationWarning={true}>
+    <html lang="en" suppressHydrationWarning={true}>
       <body className={cn(GeistSans.variable, GeistMono.variable)}>
         <Providers>
-          <div className={'relative mx-auto my-16 max-w-xl px-8'}>
+          <div className="relative mx-auto my-16 max-w-xl px-8">
             {children}
           </div>
         </Providers>
