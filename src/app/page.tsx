@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { date, format } from '@formkit/tempo'
+import { compareDesc, format } from 'date-fns'
 
 import { posts } from '~/.velite'
 
@@ -7,9 +7,8 @@ import { Intro } from '@/components/intro'
 import { Section, SectionContent, SectionHeading } from '@/components/section'
 import ThemeSwitch from '@/components/theme-switch'
 import { copyright, intro, meta, projects, social } from '@/constants/site-config'
-import { sortDate } from '@/lib/utils'
 
-const sortedPosts = posts.sort((a, b) => sortDate(a.date, b.date, { order: 'desc' }))
+const sortedPosts = posts.sort((a, b) => compareDesc(a.date, b.date))
 
 export default function Home() {
   return (
@@ -43,7 +42,7 @@ export default function Home() {
               <li key={post.slug} className={'w-max transition-opacity duration-300 hover:opacity-50'}>
                 <Link className={'flex gap-x-4'} href={`/posts/${post.slug}`}>
                   <time className={'shrink-0 font-mono text-foreground/75'} dateTime={post.date}>
-                    {format(date(post.date), { date: 'medium' })}
+                    {format(post.date, 'yyyy-MM-dd')}
                   </time>
                   <p>{post.title}</p>
                 </Link>
