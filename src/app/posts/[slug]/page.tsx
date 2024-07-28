@@ -33,7 +33,7 @@ export default function PostPage({ params }: Props) {
         <div className="space-y-1">
           <p className="text-sm text-foreground/75">{post.description}</p>
           <div className="flex items-center gap-x-1.5 text-xs text-foreground/75">
-            <time dateTime={post.date}>{format(post.date, 'yyyy-MM-dd')}</time>
+            <time dateTime={post.date}>{format(post.date, 'MMM dd, yyyy')}</time>
             <span>•</span>
             <span>{`${post.metadata.readingTime} mins`}</span>
           </div>
