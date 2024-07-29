@@ -18,7 +18,7 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <button className={'transition-opacity duration-300 hover:opacity-50'} onClick={toggleTheme}>
+    <button className="transition-opacity duration-300 hover:opacity-50" onClick={toggleTheme}>
       {theme}
     </button>
   )

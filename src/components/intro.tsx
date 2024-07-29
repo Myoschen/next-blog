@@ -10,8 +10,8 @@ interface IntroProps extends React.ComponentPropsWithoutRef<'div'> {
 export const Intro = forwardRef<HTMLDivElement, IntroProps>(({ title: author, description, className, ...props }, ref) => {
   return (
     <div ref={ref} className={cn('space-y-2', className)} {...props}>
-      <h2 className={'font-semibold'}>{author}</h2>
-      <p className={'whitespace-pre-wrap'}>{description}</p>
+      <h2 className="font-semibold">{author}</h2>
+      <p className="whitespace-pre-wrap">{description}</p>
     </div>
   )
 })
