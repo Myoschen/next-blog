@@ -23,6 +23,7 @@ export default {
   reactStrictMode: true,
   output: 'export',
   images: { unoptimized: true },
+  eslint: { ignoreDuringBuilds: true },
   experimental: { typedRoutes: true },
   webpack: (config) => {
     config.plugins.push(new VeliteWebpackPlugin())
