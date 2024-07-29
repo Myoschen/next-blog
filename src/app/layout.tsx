@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en" suppressHydrationWarning={true}>
       <body className={cn(GeistSans.variable, GeistMono.variable)}>
         <Providers>
-          <div className="relative mx-auto my-16 max-w-xl px-8">
+          <div className="relative mx-auto max-w-xl px-8 py-16">
             {children}
           </div>
         </Providers>
