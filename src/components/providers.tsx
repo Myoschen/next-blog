@@ -11,6 +11,7 @@ export default function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       enableSystem={true}
+      enableColorScheme={false}
       attribute="class"
       defaultTheme="system"
       disableTransitionOnChange={true}
