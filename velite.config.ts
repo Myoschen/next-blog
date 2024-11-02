@@ -8,8 +8,8 @@ const posts = defineCollection({
   pattern: 'posts/**/*.md',
   schema: s
     .object({
-      title: s.string().toLowerCase(),
-      description: s.string().toLowerCase(),
+      title: s.string(),
+      description: s.string(),
       date: s.isodate(),
       slug: s.slug('posts'),
       metadata: s.metadata(),
@@ -26,7 +26,6 @@ const rehypePrettyCodeOptions: Options = {
 export default defineConfig({
   collections: { posts },
   markdown: {
-    // remarkPlugins: [],
     rehypePlugins: [[rehypePrettyCode, rehypePrettyCodeOptions]],
   },
 })

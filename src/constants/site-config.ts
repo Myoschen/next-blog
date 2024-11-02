@@ -1,38 +1,39 @@
 import { getYear } from 'date-fns'
 
 export const meta = {
-  title: 'next blog',
-  description: 'this is a blog built by Next.js and Velite.',
-  author: 'myos',
+  title: 'Next Blog',
+  description: 'This is a blog built by Next.js and Velite.',
+  author: 'Myoschen',
 }
 
 export const intro = {
-  title: 'welcome !',
-  description: 'hello, i\'m myos, a front-end developer.',
+  title: 'Welcome !',
+  description: 'Hello, I\'m Myos, a front-end developer.',
 }
 
-export const projects = [
+type Project = {
+  name: string
+  description: string
+  url: string
+  disabled?: boolean
+}
+
+export const projects: Project[] = [
   {
     name: 'portfolio',
-    description: 'my portfolio.',
+    description: 'My portfolio.',
     url: 'https://github.com/Myoschen/portfolio',
   },
   {
     name: 'next-blog',
-    description: 'a minimal blog is built with next, velite.',
+    description: 'A minimal blog is built with next, velite.',
     url: 'https://github.com/Myoschen/next-blog',
-  },
-  {
-    name: 'create-app',
-    description: 'a cli tool to scaffold project.',
-    url: 'https://github.com/Myoschen/create-app',
-    disabled: true,
   },
 ]
 
 export const copyright = {
   year: getYear(new Date()),
-  owner: 'myoschen',
+  owner: 'Myoschen',
 }
 
 export const social = {

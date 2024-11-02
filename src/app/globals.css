@@ -35,7 +35,7 @@
   }
 
   [data-rehype-pretty-code-figure] pre {
-    @apply text-sm p-4 shadow-sm rounded-lg overflow-auto;
+    @apply text-xs p-4 shadow-sm rounded-lg overflow-auto;
   }
 
   [data-rehype-pretty-code-figure] pre,

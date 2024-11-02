@@ -20,7 +20,7 @@ export default function HomePage() {
       <Intro title={intro.title} description={intro.description} />
       {/* projects */}
       <Section>
-        <SectionHeading>projects</SectionHeading>
+        <SectionHeading>Projects</SectionHeading>
         <SectionContent asChild={true}>
           <ul className="space-y-2">
             {projects.map(project => (
@@ -39,7 +39,7 @@ export default function HomePage() {
       </Section>
       {/* posts */}
       <Section>
-        <SectionHeading>posts</SectionHeading>
+        <SectionHeading>Posts</SectionHeading>
         <SectionContent asChild={true}>
           <ul className="space-y-2">
             {sortedPosts.map(post => (
