@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation'
+import { MDXContent } from '@content-collections/mdx/react'
+import { allPosts } from 'content-collections'
 import { format } from 'date-fns'
 
-import { posts } from '~/.velite'
-
 function getPostBySlug(slug: string) {
-  return posts.find(post => post.slug === slug)
+  return allPosts.find(post => post.slug === slug)
 }
 
 interface Props {
@@ -18,7 +18,7 @@ export function generateMetadata({ params }: Props) {
 }
 
 export function generateStaticParams() {
-  return posts.map(post => ({ slug: post.slug }))
+  return allPosts.map(post => ({ slug: post.slug }))
 }
 
 export default function PostPage({ params }: Props) {
@@ -35,12 +35,12 @@ export default function PostPage({ params }: Props) {
           <div className="flex items-center gap-x-1.5 text-xs text-foreground/75">
             <time dateTime={post.date}>{format(post.date, 'MMM dd, yyyy')}</time>
             <span>•</span>
-            <span>{`${post.metadata.readingTime} mins`}</span>
+            <span>{`${post.readingTime} mins`}</span>
           </div>
         </div>
       </div>
       <article className="prose dark:prose-invert">
-        <p dangerouslySetInnerHTML={{ __html: post.content }} />
+        <MDXContent code={post.mdx} />
       </article>
     </div>
   )

@@ -1,7 +1,6 @@
 import Link from 'next/link'
+import { allPosts } from 'content-collections'
 import { compareDesc, format } from 'date-fns'
-
-import { posts } from '~/.velite'
 
 import { Intro } from '@/components/intro'
 import { Section, SectionContent, SectionHeading } from '@/components/section'
@@ -9,7 +8,7 @@ import ThemeSwitch from '@/components/theme-switch'
 import { copyright, intro, meta, projects, social } from '@/constants/site-config'
 import { cn } from '@/lib/utils'
 
-const sortedPosts = posts.sort((a, b) => compareDesc(a.date, b.date))
+const postsSortedByDate = allPosts.sort((a, b) => compareDesc(a.date, b.date))
 
 export default function HomePage() {
   return (
@@ -42,9 +41,9 @@ export default function HomePage() {
         <SectionHeading>Posts</SectionHeading>
         <SectionContent asChild={true}>
           <ul className="space-y-2">
-            {sortedPosts.map(post => (
+            {postsSortedByDate.map(post => (
               <li key={post.slug} className="w-max transition-opacity duration-300 hover:opacity-50">
-                <Link className="flex gap-x-4" href={post.permalink}>
+                <Link className="flex gap-x-4" href={post.href}>
                   <time className="shrink-0 font-mono text-foreground/75" dateTime={post.date}>
                     {format(post.date, 'yyyy-MM-dd')}
                   </time>
