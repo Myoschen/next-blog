@@ -8,7 +8,7 @@
 ![GitHub License](https://img.shields.io/github/license/Myoschen/next-blog?style=flat-square&labelColor=%23222222&color=%23111111)
 
 <!-- project description -->
-Build a minimal blog with Next.js, Tailwind CSS and Velite.
+Build a minimal blog with Next.js, Tailwind CSS and Content Collections.
 
 ## Screenshots
 
@@ -36,7 +36,7 @@ pnpm run dev
 
 ### Create posts
 
-Create a new `Markdown` file in the `content/posts` directory to add a new post.
+Create a new `mdx` file in the `content/posts` directory to add a new post.
 
 ### Deploy
 
