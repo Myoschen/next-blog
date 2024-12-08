@@ -1,9 +1,9 @@
-import { defineCollection, defineConfig } from "@content-collections/core";
-import { transformerTwoslash } from '@shikijs/twoslash';
-import rehypePrettyCode, { type Options } from 'rehype-pretty-code';
-import { compileMDX } from '@content-collections/mdx';
-import type { Route } from "next";
-import readingTime from "reading-time";
+import type { Route } from 'next'
+import { defineCollection, defineConfig } from '@content-collections/core'
+import { compileMDX } from '@content-collections/mdx'
+import { transformerTwoslash } from '@shikijs/twoslash'
+import readingTime from 'reading-time'
+import rehypePrettyCode, { type Options } from 'rehype-pretty-code'
 
 const rehypePrettyCodeOptions: Options = {
   theme: { light: 'vitesse-light', dark: 'vitesse-dark' },
@@ -12,11 +12,11 @@ const rehypePrettyCodeOptions: Options = {
 
 // TODO handle images
 const posts = defineCollection({
-  name: "posts",
-  directory: "content/posts",
-  include: "*.mdx",
+  name: 'posts',
+  directory: 'content/posts',
+  include: '*.mdx',
   exclude: '_*.mdx',
-  schema: (z) => ({
+  schema: z => ({
     title: z.string(),
     description: z.string(),
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
@@ -30,9 +30,9 @@ const posts = defineCollection({
     const href = `/posts/${slug}` as Route<'/posts/${string}'>
     const { minutes } = readingTime(document.content)
     return { ...document, mdx, slug, href, readingTime: minutes }
-  }
-});
+  },
+})
 
 export default defineConfig({
   collections: [posts],
-});
+})

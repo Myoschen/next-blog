@@ -1,7 +1,7 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/components/**/*.{ts,tsx}', './src/app/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
@@ -14,7 +14,8 @@ module.exports = {
         sans: ['var(--font-geist-sans)', ...fontFamily.sans],
         mono: ['var(--font-geist-mono)', ...fontFamily.mono],
       },
-      typography: ({ theme }) => ({
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      typography: ({ theme }: { theme: any }) => ({
         DEFAULT: {
           maxWidth: 'none',
           css: {
@@ -31,5 +32,6 @@ module.exports = {
       }),
     },
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require('@tailwindcss/typography')],
-}
+} satisfies Config

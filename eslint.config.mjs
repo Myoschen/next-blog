@@ -23,7 +23,7 @@ export default fixupConfigRules([
   }),
   // react, next
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       parser: parserTs,
       parserOptions: {
