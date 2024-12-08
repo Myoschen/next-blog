@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { MDXContent } from '@content-collections/mdx/react'
 import { allPosts } from 'content-collections'
 import { format } from 'date-fns'
+import { highlight } from 'sugar-high'
 
 function getPostBySlug(slug: string) {
   return allPosts.find(post => post.slug === slug)
@@ -40,7 +41,15 @@ export default function PostPage({ params }: Props) {
         </div>
       </div>
       <article className="prose dark:prose-invert">
-        <MDXContent code={post.mdx} />
+        <MDXContent
+          code={post.mdx}
+          components={{
+            code: ({ children, ...props }) => {
+              const __html = highlight(children as string)
+              return <code dangerouslySetInnerHTML={{ __html }} {...props} />
+            },
+          }}
+        />
       </article>
     </div>
   )

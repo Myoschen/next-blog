@@ -23,8 +23,6 @@ interface User {
 
 export default function UserProfile() {
   const [user, setUser] = useState<User | null>(null)
-  //     ^?
-
 
   useEffect(() => {
     fetch('https://example.com/api/v1/user')
