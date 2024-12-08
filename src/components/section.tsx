@@ -36,3 +36,29 @@ export const SectionContent = React.forwardRef<HTMLDivElement, SectionContentPro
   },
 )
 SectionContent.displayName = 'SectionContent'
+
+interface SectionListProps extends React.ComponentPropsWithoutRef<'ul'> {}
+
+export const SectionList = React.forwardRef<HTMLUListElement, SectionListProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <ul ref={ref} className={cn('space-y-2', className)} {...props}>
+        {children}
+      </ul>
+    )
+  },
+)
+SectionList.displayName = 'SectionList'
+
+interface SectionListItemProps extends React.ComponentPropsWithoutRef<'li'> {}
+
+export const SectionListItem = React.forwardRef<HTMLLIElement, SectionListItemProps>(
+  ({ className, children, ...props }, ref) => {
+    return (
+      <li ref={ref} className={cn('w-max transition-opacity duration-300 hover:opacity-50', className)} {...props}>
+        {children}
+      </li>
+    )
+  },
+)
+SectionListItem.displayName = 'SectionListItem'

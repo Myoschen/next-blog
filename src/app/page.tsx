@@ -3,8 +3,8 @@ import { allPosts } from 'content-collections'
 import { compareDesc, format } from 'date-fns'
 
 import { Intro } from '@/components/intro'
-import { Section, SectionContent, SectionHeading } from '@/components/section'
-import ThemeSwitch from '@/components/theme-switch'
+import { Section, SectionContent, SectionHeading, SectionList, SectionListItem } from '@/components/section'
+import { ThemeSwitch } from '@/components/theme-switch'
 import { copyright, intro, meta, projects, social } from '@/constants/site-config'
 import { cn } from '@/lib/utils'
 
@@ -20,38 +20,43 @@ export default function HomePage() {
       {/* projects */}
       <Section>
         <SectionHeading>Projects</SectionHeading>
-        <SectionContent asChild={true}>
-          <ul className="space-y-2">
+        <SectionContent>
+          <SectionList>
             {projects.map(project => (
-              <li key={project.name} className="w-max transition-opacity duration-300 hover:opacity-50">
-                <a className={cn('flex gap-x-4', project.disabled && 'pointer-events-none')} href={project.url} target="_blank" rel="noopener noreferrer">
-                  <p>
+              <SectionListItem key={project.name}>
+                <a
+                  className={cn('flex gap-x-4', project.disabled && 'pointer-events-none')}
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
                     {project.name}
                     {project.disabled && <span className="ml-1 text-xs">🚧</span>}
-                  </p>
-                  <p>{project.description}</p>
+                  </span>
+                  <span>{project.description}</span>
                 </a>
-              </li>
+              </SectionListItem>
             ))}
-          </ul>
+          </SectionList>
         </SectionContent>
       </Section>
       {/* posts */}
       <Section>
         <SectionHeading>Posts</SectionHeading>
-        <SectionContent asChild={true}>
-          <ul className="space-y-2">
+        <SectionContent>
+          <SectionList>
             {postsSortedByDate.map(post => (
-              <li key={post.slug} className="w-max transition-opacity duration-300 hover:opacity-50">
+              <SectionListItem key={post.slug}>
                 <Link className="flex gap-x-4" href={post.href}>
                   <time className="shrink-0 font-mono text-foreground/75" dateTime={post.date}>
                     {format(post.date, 'yyyy-MM-dd')}
                   </time>
-                  <p>{post.title}</p>
+                  <span>{post.title}</span>
                 </Link>
-              </li>
+              </SectionListItem>
             ))}
-          </ul>
+          </SectionList>
         </SectionContent>
       </Section>
       <footer className="flex items-center gap-x-4">

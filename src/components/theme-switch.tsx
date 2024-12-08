@@ -4,7 +4,7 @@ import { useTheme } from 'next-themes'
 
 import { useMounted } from '@/hooks/use-mounted'
 
-export default function ThemeSwitch() {
+export function ThemeSwitch() {
   const isMounted = useMounted()
   const { theme, setTheme } = useTheme()
 
@@ -14,7 +14,11 @@ export default function ThemeSwitch() {
   }
 
   if (!isMounted) {
-    return null
+    return (
+      <button className="opacity-50 blur-sm" disabled={true}>
+        theme
+      </button>
+    )
   }
 
   return (

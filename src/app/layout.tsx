@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 
-import Providers from '@/components/providers'
+import { Providers } from '@/components/providers'
 import { meta } from '@/constants/site-config'
 import { cn } from '@/lib/utils'
 
